@@ -11,8 +11,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class EditActivity extends BaseActivity {
     //找到控件
     EditText et_1;
+    private String content;
+    private String time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +38,18 @@ import androidx.core.view.WindowInsetsCompat;
             return true;
         } else if (keyCode==KeyEvent.KEYCODE_BACK) {
             Intent intent= new Intent();
+            intent.putExtra("content",et_1.getText().toString());
+            intent.putExtra("time", dateToStr());
             setResult(RESULT_OK,intent);
             finish();
             return true;
         }
         return super.onKeyDown(keyCode,event);
+    }
+
+    public String dateToStr(){
+        Date date = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return simpleDateFormat.format(date);
     }
 }
