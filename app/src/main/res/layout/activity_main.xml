@@ -7,7 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
+ <ListView
+        android:id="@+id/lv_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="8dp"
+        android:divider="?attr/lvBackground"
+        android:dividerHeight="8dp"
+        >
+    </ListView>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_1"
         android:layout_width="wrap_content"
